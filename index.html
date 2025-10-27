@@ -1,0 +1,1541 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de Inglés </title>
+  <style>
+:root {
+  --bg-start: #fffbe7;
+  --bg-end: #fff5c2;
+  --accent: #ffb300;
+  --text-dark: #333;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+.alert-banner {
+  background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
+  border: 1px solid var(--accent);
+  border-left: 6px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.2rem;
+  animation: fadeIn 0.8s ease;
+}
+
+.alert-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* 🔊 Icono animado */
+.alert-icon {
+  font-size: 1.8rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.8; }
+}
+
+/* 📝 Texto */
+.alert-text {
+  flex: 1;
+  color: var(--text-dark);
+  min-width: 220px;
+}
+
+.alert-text h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.alert-text p {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* 🎧 Reproductor */
+.alert-audio {
+  flex-shrink: 0;
+  height: 36px;
+  accent-color: var(--accent);
+}
+
+/* 🌐 Adaptabilidad */
+@media (max-width: 680px) {
+  .alert-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .alert-audio {
+    width: 100%;
+  }
+}
+
+/* ✨ Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+body {
+      background-color: #f0f8ff; /* color de fondo (azul claro) */
+    }
+/* 🌟 NAV principal con estilo "glass" */
+#mainNav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 20px 20px 20px 20px;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0 auto 25px;
+  max-width: 900px;
+  animation: fadeInDown 0.8s ease;
+  transition: all 0.4s ease;
+}
+
+/* ✨ Enlaces del menú */
+#mainNav a {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 10px 20px;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🎈 Efecto hover con luz */
+#mainNav a:hover {
+  background: linear-gradient(135deg, #ffffff, #e0e7ff);
+  color: #407cff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
+}
+
+/* 💎 Enlace activo */
+#mainNav a.active {
+  background: linear-gradient(135deg, #548aff, #386af3);
+  color: white;
+  font-weight: 600;
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.35);
+}
+
+/* 🔥 Animación al cargar */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  /* ==== ESTILO GENERAL PARA TODAS LAS LECCIONES ==== */
+  
+.card.page {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  font-family: 'Poppins', sans-serif;
+}
+
+.card.page h1{
+  color: #ff0202;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.card.page ul{
+    text-align: justify;
+    line-height: 1.3;
+      font-size: 1rem;
+
+}
+
+.card.page h2 {
+  color: #ff0202;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.card.page p {
+  font-size: 1rem;
+  line-height: 1.3;
+  text-align: justify;
+}
+
+/* ==== TABLAS MODERNAS ==== */
+.styled-table {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* opcional: centra verticalmente si el contenedor tiene altura */
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+.styled-table table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.styled-table thead tr {
+  background: linear-gradient(180deg, #00b4d8, #00b4d8);
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3faff;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #caf0f8;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+/* ==== AUDIO Y ETIQUETAS ==== */
+audio {
+  display: block;
+  margin: 15px auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #0003bb;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* ==== SECCIÓN DE EJEMPLOS ==== */
+.examples {
+  background: #f1f9ff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.examples p {
+  margin: 5px 0;
+}
+
+.examples strong {
+  color: #0a009c;
+}
+
+/* Evitar salto de página dentro de un elemento */
+.no-break {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* Evitar salto antes o después */
+.no-break-before {
+  page-break-before: avoid;
+  break-before: avoid;
+}
+.no-break-after {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+
+</style>
+</head>
+
+<body>
+ <header>
+    <div class="brand"> </div>
+  </header>
+  
+  <main>
+  <section id="page-0" class="card page" data-title="intro">
+      <div>
+        <h1><span style="color:red">Bienvenido a inglés desde cero 🌐</span></h1> <br>
+        <p><b>Objetivo 🎯</b> <br>Esta web ha sido creada para acompañarte en el proceso de aprendizaje del inglés desde cero, 
+          de manera práctica, gradual y orientada al uso real del idioma. Aquí encontrarás lecciones diseñadas para que 
+          avances con seguridad en comprensión, pronunciación, escritura y escucha.</p>  
+
+          <p><b>Pronunciación y audios 🔊 </b><br> En muchas tablas y ejemplos encontrarás una sección dedicada a la pronunciación.
+            Esta pronunciación es una aproximación escrita pensada para facilitar que el estudiante asocie la palabra con su sonido, 
+            sin necesidad de conocer el alfabeto fonético internacional. Además, cada lección dispone de audios de apoyo para practicar
+            el listening (escucha). Te recomendamos repetir las palabras y frases varias veces para mejorar tu acento y tu fluidez.</p>
+
+          <p><b>Sobre los ejemplos y la gramática✍️</b> <br> En las primeras lecciones las oraciones no incluyen punto final, ya que aún no se 
+          han estudiado las estructuras gramaticales completas. A medida que avances, irás aprendiendo cómo construir oraciones correctamente, 
+          con su respectiva puntuación y orden.</p>
+
+          <p><b>Estructura del curso 🧩</b> <br> Esta web está estructurada de manera progresiva para que el aprendizaje sea natural, acumulativo y funcional:</p>
+            <ul>
+              <li>En las primeras lecciones (Lección 1 - Lección 6) se abordan los temas más básicos, con el objetivo de que el aprendiz adquiera vocabulario 
+                esencial sin preocuparse todavía por las reglas gramaticales. Solo importa lo que se está estudiando, el resto del vocabulario 
+                o palabras adicionales no son relevantes y se incluyen únicamente para complementar los ejemplos. No te preocupes si no entiendes el 
+                significado completo de una oración: lo importante al inicio es reconocer los sonidos y practicar la pronunciación.</li>
+              <li>En la siguiente etapa (Lección 7 - En construcción 🏗️🚧) se amplía el vocabulario para que el estudiante pueda reconocer y
+                 pronunciar con soltura palabras relacionadas con objetos, frutas, profesiones, miembros de la familia, formas, colores y más.</li>
+              <li>Posteriormente (Lección En construcción 🏗️🚧), se introducen los elementos fundamentales de la gramática, como preposiciones, pronombres, adjetivos, adverbios, conectores, 
+                sustantivos y verbos. En esta fase el objetivo es identificar las partes que componen una oración.</li>
+              <li>Más adelante (Lección En construcción 🏗️🚧), se estudian los tiempos verbales simples y continuos, junto con temas intermedios relacionados. Al finalizar esta sección, 
+                  el aprendiz debería ser capaz de expresarse de forma básica, entender conversaciones cotidianas, así como leer y escribir textos sencillos.</li>
+              <li>Finalmente (Lección # en adelante), se trabajan los tiempos perfectos, temas intermedios y conceptos avanzados. Al concluir esta etapa, el aprendiz contará 
+                con los conocimientos necesarios para comprender, producir y comunicarse con un nivel intermedio-alto del idioma.</li>
+            </ul>
+            <p>Este curso cubre todos los temas esenciales y refina las habilidades necesarias para alcanzar una proficiencia equivalente al nivel B1–B2 del Marco Común Europeo de Referencia (MCER).</p> 
+
+          <p><b>Tipo de inglés utilizado 🗽</b> <br> El vocabulario y las expresiones presentadas en esta web corresponden al inglés americano, 
+            que es la variedad más utilizada en medios, negocios y conversaciones internacionales.</p> 
+
+          <p><b>Nota final ⏰</b> <br> Se recomienda que cada día el estudiante dedique al menos 2 horas para abordar las lecciones: <br> 
+          <ul><li>1 hora para estudiar el contenido,</li>
+          <li>y 1 hora para comprender, practicar y evaluar lo aprendido.</li></ul> <br>
+          Ten en cuenta que el progreso depende principalmente de tu <b>disposición</b> e <b>interés:</b>
+          <ul><li>La disposición es la actitud abierta y constante para aprender, incluso cuando el tema parece difícil.</li>
+          <li>El interés es la motivación personal que te impulsa a seguir aprendiendo porque reconoces el valor del conocimiento.</li></ul> <br>          
+        </p>
+
+        <p><span style="color:#0f172a",><b><i>Si realmente deseas aprender inglés, encontrarás el tiempo y la forma de hacerlo. La constancia es la ruta al éxito.</i></b></span></p>
+                </div>
+
+    </section>
+
+  <section id="page-1" class="card page" data-title="Lección 1: El alfabeto">
+    <!-- 🔊 Banner superior atractivo con audio -->
+<div class="alert-banner">
+  <div class="alert-container">
+    <div class="alert-icon" aria-hidden="true">🔊</div>
+    <div class="alert-text">
+      <h3>Audio guía: Lección 1</h3>
+      <p>Escucha esta introducción antes de comenzar.</p>
+    </div>
+    <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
+      <source src="l1.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+</div>
+ <br>
+  
+  <div >
+    <h2>Lección 1: El alfabeto - The alphabet </h2>
+    <p><strong>The alphabet (Di áLfabet):</strong> el alfabeto inglés tiene 26 letras (A–Z). 
+      Cada letra tiene un nombre y un sonido. Se usa para deletrear (<i>spell</i>) nombres y palabras.</p>
+  </div>
+
+  <div  class="styled-table" >
+  <table>
+    <thead>
+      <tr>
+        <th>Letra</th>
+        <th>Fonética</th>
+        <th>Pronunciación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>A</td><td>/eɪ/</td><td>ei</td></tr>
+      <tr><td>B</td><td>/biː/</td><td>bi</td></tr>
+      <tr><td>C</td><td>/siː/</td><td>si</td></tr>
+      <tr><td>D</td><td>/diː/</td><td>di</td></tr>
+      <tr><td>E</td><td>/iː/</td><td>i</td></tr>
+      <tr><td>F</td><td>/ɛf/</td><td>ef</td></tr>
+      <tr><td>G</td><td>/dʒiː/</td><td>yi</td></tr>
+      <tr><td>H</td><td>/eɪtʃ/</td><td>eich</td></tr>
+      <tr><td>I</td><td>/aɪ/</td><td>ai</td></tr>
+      <tr><td>J</td><td>/dʒeɪ/</td><td>yei</td></tr>
+      <tr><td>K</td><td>/keɪ/</td><td>kei</td></tr>
+      <tr><td>L</td><td>/ɛl/</td><td>el</td></tr>
+      <tr><td>M</td><td>/ɛm/</td><td>em</td></tr>
+      <tr><td>N</td><td>/ɛn/</td><td>en</td></tr>
+      <tr><td>O</td><td>/oʊ/</td><td>ou</td></tr>
+      <tr><td>P</td><td>/piː/</td><td>pi</td></tr>
+      <tr><td>Q</td><td>/kjuː/</td><td>kiu</td></tr>
+      <tr><td>R</td><td>/ɑr/</td><td>ar</td></tr>
+      <tr><td>S</td><td>/ɛs/</td><td>es</td></tr>
+      <tr><td>T</td><td>/tiː/</td><td>ti</td></tr>
+      <tr><td>U</td><td>/juː/</td><td>yu</td></tr>
+      <tr><td>V</td><td>/viː/</td><td>vi</td></tr>
+      <tr><td>W</td><td>/ˈdʌbəl.juː/</td><td>dábol yu</td></tr>
+      <tr><td>X</td><td>/ɛks/</td><td>eks</td></tr>
+      <tr><td>Y</td><td>/waɪ/</td><td>uai</td></tr>
+      <tr><td>Z</td><td>/ziː/</td><td>si</td></tr>
+    </tbody>
+  </table>
+</div>
+
+  <label><strong>🎧 Pronunciación del alfabeto</strong></label>
+  <audio controls preload="metadata">
+    <source src="alfabeto.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="examples">
+    <p><strong>🔤 Ejemplos:</strong></p>
+    <p><strong><em>How do you spell your name?</em></strong></p>
+    <p>W-I-L-L-I-A-M</p>
+    <p>A-N-A</p>
+    <p>R-O-B-E-R-T</p>
+    
+    <label><strong>🎧 Pronunciación del ejemplo</strong></label>
+  <audio controls preload="metadata">
+    <source src="1.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio> <br>
+
+    <p><strong><em>Spell the word I say!</em></strong></p>
+    <p>Apple 🍎</p>
+    <p>Book 📘 </p>
+    <p>Dog 🐶</p>
+    <p>Name 🧑‍🏫</p>
+    <label><strong>🎧 Pronunciación del ejemplo</strong></label>
+  <audio controls preload="metadata">
+    <source src="2.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+  </div>
+
+
+</section>
+
+ <section id="page-2" class="card page" data-title="Lección 2: Los números">
+<div class="alert-banner">
+  <div class="alert-container">
+    <div class="alert-icon" aria-hidden="true">🔊</div>
+    <div class="alert-text">
+      <h3>Audio guía: Lección 2</h3>
+      <p>Escucha esta introducción antes de comenzar.</p>
+    </div>
+    <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
+      <source src="l2.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+</div>
+ <br>
+
+
+  <div>
+    <h2>Lección 2: Los números - The numbers</h2>
+    <p><strong>Cardinal Numbers (Kárdinal námbers):</strong> los números cardinales se usan para contar cosas o personas, decir la edad, hablar de cantidades, dinero, números de teléfono, etc.</p>
+  </div>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Número</th>
+          <th>Inglés</th>
+          <th>Pronunciación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>zero</td><td>zírou</td></tr>
+        <tr><td>1</td><td>one</td><td>uán</td></tr>
+        <tr><td>2</td><td>two</td><td>tú</td></tr>
+        <tr><td>3</td><td>three</td><td>zrí</td></tr>
+        <tr><td>4</td><td>four</td><td>fór</td></tr>
+        <tr><td>5</td><td>five</td><td>faiv</td></tr>
+        <tr><td>6</td><td>six</td><td>siks</td></tr>
+        <tr><td>7</td><td>seven</td><td>séven</td></tr>
+        <tr><td>8</td><td>eight</td><td>éit</td></tr>
+        <tr><td>9</td><td>nine</td><td>náin</td></tr>
+        <tr><td>10</td><td>ten</td><td>ten</td></tr>
+        <tr><td>11</td><td>eleven</td><td>iléven</td></tr>
+        <tr><td>12</td><td>twelve</td><td>tuelv</td></tr>
+        <tr><td>13</td><td>thirteen</td><td>zertíin</td></tr>
+        <tr><td>14</td><td>fourteen</td><td>fórtíin</td></tr>
+        <tr><td>15</td><td>fifteen</td><td>fiftíin</td></tr>
+        <tr><td>16</td><td>sixteen</td><td>sixtíin</td></tr>
+        <tr><td>17</td><td>seventeen</td><td>séventíin</td></tr>
+        <tr><td>18</td><td>eighteen</td><td>éitín</td></tr>
+        <tr><td>19</td><td>nineteen</td><td>náintín</td></tr>
+        <tr><td>20</td><td>twenty</td><td>tuénti</td></tr>
+        <tr><td>30</td><td>thirty</td><td>zérti</td></tr>
+        <tr><td>40</td><td>forty</td><td>fórti</td></tr>
+        <tr><td>50</td><td>fifty</td><td>fífti</td></tr>
+        <tr><td>60</td><td>sixty</td><td>síksti</td></tr>
+        <tr><td>70</td><td>seventy</td><td>séventi</td></tr>
+        <tr><td>80</td><td>eighty</td><td>éiti</td></tr>
+        <tr><td>90</td><td>ninety</td><td>náinti</td></tr>
+        <tr><td>100</td><td>one hundred</td><td>uán jéndred</td></tr>
+        <tr><td>1,000</td><td>one thousand</td><td>uán záusand</td></tr>
+        <tr><td>1,000,000</td><td>one million</td><td>uán mílion</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <label><strong>🎧 Pronunciación de los cardinales</strong></label>
+  <audio controls preload="metadata">
+    <source src="3.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="examples">
+    <p><strong>🔢 Ejemplos:</strong></p>
+    <p>I have two cats (ai jav tú kats)</p>
+    <p>She is twenty-five years old (shi is tuénti faiv yíars old)</p>
+    <p>My school has ten classrooms (mai skúul jaz ten klásrums)</p>
+
+    <label><strong>🎧 Pronunciación de los ejemplos</strong></label>
+  <audio controls preload="metadata">
+    <source src="4.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio> <br>
+
+    <p><strong>Entre 20 y 99 se usa la decena, un guion y la unidad:</strong></p>
+    <p>21 → twenty-one (tuénti uán)</p>
+    <p>35 → thirty-five (zérti faiv)</p>
+    <p>99 → ninety-nine (náinti náin)</p>
+    
+    <label><strong>🎧 Pronunciación</strong></label>
+  <audio controls preload="metadata">
+    <source src="5.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio> <br>
+
+    <p><strong>Entre 100 y 999 se usa la centena seguida de la decena:</strong></p>
+    <p>110 → one hundred ten (uán jéndred ten)</p>
+    <p>224 → two hundred twenty-four (tú jéndred tuénti fór)</p>
+    <p>999 → nine hundred ninety-nine (náin jéndred náinti náin)</p>
+
+    <label><strong>🎧 Pronunciación</strong></label>
+  <audio controls preload="metadata">
+    <source src="6.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio> <br>
+
+    <p><strong>A partir de 1000 la estructura es igual que en español:</strong></p>
+    <p>1254 → one thousand two hundred fifty-four (uan záusand tú jéndred fífti fór)</p>
+    <p>24378 → twenty-four thousand three hundred seventy-eight (tuénti fór záusand zri jéndred séventi éit)</p>
+    
+    <label><strong>🎧 Pronunciación</strong></label>
+  <audio controls preload="metadata">
+    <source src="7.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio> <br>
+
+  </div>
+
+  <div> <br> <br>
+    <p><strong>Ordinal Numbers (Órdinal námbers):</strong> los números ordinales se usan para indicar orden o posición: fechas, pisos, lugares, capítulos, etc.</p>
+  </div>
+
+  <div class="styled-table">
+    <table>
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Inglés</th>
+      <th>Pronunciación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1st</td><td>first</td><td>ferst</td></tr>
+    <tr><td>2nd</td><td>second</td><td>sécond</td></tr>
+    <tr><td>3rd</td><td>third</td><td>zerd</td></tr>
+    <tr><td>4th</td><td>fourth</td><td>fórz</td></tr>
+    <tr><td>5th</td><td>fifth</td><td>fífth</td></tr>
+    <tr><td>6th</td><td>sixth</td><td>síksth</td></tr>
+    <tr><td>7th</td><td>seventh</td><td>séventh</td></tr>
+    <tr><td>8th</td><td>eighth</td><td>éith</td></tr>
+    <tr><td>9th</td><td>ninth</td><td>náinth</td></tr>
+    <tr><td>10th</td><td>tenth</td><td>ténth</td></tr>
+    <tr><td>11th</td><td>eleventh</td><td>iléventh</td></tr>
+    <tr><td>12th</td><td>twelfth</td><td>tuelvth</td></tr>
+    <tr><td>13th</td><td>thirteenth</td><td>zertíinth</td></tr>
+    <tr><td>14th</td><td>fourteenth</td><td>fórtíinth</td></tr>
+    <tr><td>15th</td><td>fifteenth</td><td>fiftíinth</td></tr>
+    <tr><td>16th</td><td>sixteenth</td><td>sixtíinth</td></tr>
+    <tr><td>17th</td><td>seventeenth</td><td>séventíinth</td></tr>
+    <tr><td>18th</td><td>eighteenth</td><td>éitíinth</td></tr>
+    <tr><td>19th</td><td>nineteenth</td><td>náintíinth</td></tr>
+    <tr><td>20th</td><td>twentieth</td><td>tuéntieth</td></tr>
+    <tr><td>21st</td><td>twenty-first</td><td>tuénti ferst</td></tr>
+    <tr><td>22nd</td><td>twenty-second</td><td>tuénti sécond</td></tr>
+    <tr><td>23rd</td><td>twenty-third</td><td>tuénti zerd</td></tr>
+    <tr><td>30th</td><td>thirtieth</td><td>zértieth</td></tr>
+    <tr><td>40th</td><td>fortieth</td><td>fórtieth</td></tr>
+    <tr><td>50th</td><td>fiftieth</td><td>fíftieth</td></tr>
+    <tr><td>60th</td><td>sixtieth</td><td>síkstieth</td></tr>
+    <tr><td>70th</td><td>seventieth</td><td>séventieth</td></tr>
+    <tr><td>80th</td><td>eightieth</td><td>éitieth</td></tr>
+    <tr><td>90th</td><td>ninetieth</td><td>náintieth</td></tr>
+    <tr><td>100th</td><td>one hundredth</td><td>uán jéndredth</td></tr>
+    <tr><td>1,000th</td><td>one thousandth</td><td>uán záusandth</td></tr>
+    <tr><td>1,000,000th</td><td>one millionth</td><td>uán mílionth</td></tr>
+  </tbody>
+</table>
+  </div>
+
+  <label><strong>🎧 Pronunciación de los ordinales</strong></label>
+  <audio controls preload="metadata">
+    <source src="8.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="examples">
+    <p><strong>📘 Ejemplos:</strong></p>
+    <p>She lives on the fifth floor (shi livz on de fifz flor)</p>
+    <p>My birthday is on the third of May (mai bérzdei is on de zerd of mei)</p>
+    <p>This is his twelfth time visiting New York (dis is jis tuelvz taim vizitin niu yórk)</p>
+
+  <label><strong>🎧 Pronunciación de los ejemplos</strong></label>
+  <audio controls preload="metadata">
+    <source src="9.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio> <br>
+
+    <p><strong>La estructura para escribir los números ordinales es similar al de los números cardinales:</strong></p>
+    <p>21st → twenty-first (tuénti ferst)</p>
+    <p>35th → thirty-fifth (zérti fifz)</p>
+    <p>99th → ninety-ninth (náinti nainz)</p>
+    <p>110th → one hundred tenth (uan jóndred tenz)</p>
+    <p>224th → two hundred twenty-fourth (tchu jóndred tuénti forz)</p>
+    
+  <label><strong>🎧 Pronunciación del ejemplos</strong></label>
+  <audio controls preload="metadata">
+    <source src="10.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+  </div>
+
+</section>
+
+<section id="page-3" class="card page" data-title="Lección 3: Días y sus partes">
+  <div class="alert-banner">
+  <div class="alert-container">
+    <div class="alert-icon" aria-hidden="true">🔊</div>
+    <div class="alert-text">
+      <h3>Audio guía: Lección 3</h3>
+      <p>Escucha esta introducción antes de comenzar.</p>
+    </div>
+    <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
+      <source src="l3.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+</div>
+ <br>
+
+
+  <div>
+    <h2>Lección 3: Los días - The days</h2>
+    <p>Los <strong>días de la semana</strong> <i>(Days of the week)</i> se usan para hablar de rutinas, horarios, clases o eventos. En inglés, siempre se escriben con mayúscula inicial.</p>
+  </div>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Español</th>
+          <th>Inglés</th>
+          <th>Pronunciación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Lunes</td><td>Monday</td><td>móndei</td></tr>
+        <tr><td>Martes</td><td>Tuesday</td><td>tiúsdei</td></tr>
+        <tr><td>Miércoles</td><td>Wednesday</td><td>uéndzdei</td></tr>
+        <tr><td>Jueves</td><td>Thursday</td><td>zérzdei</td></tr>
+        <tr><td>Viernes</td><td>Friday</td><td>fráidei</td></tr>
+        <tr><td>Sábado</td><td>Saturday</td><td>sáturdei</td></tr>
+        <tr><td>Domingo</td><td>Sunday</td><td>sóndei</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <label><strong>🎧 Pronunciación de los días</strong></label>
+  <audio controls preload="metadata">
+    <source src="11.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="examples">
+    <blockquote><b>Para los días se usa: on + day → on Monday, on Friday, etc.</b></blockquote>
+    <p><strong>📘 Ejemplos:</strong></p>
+    <p>I go to school on Monday (ai gó tu skúul on móndei)</p>
+    <p>We play soccer on Tuesday (wi plei sóker on tiúsdei)</p>
+    <p>My English class is on Wednesday (mai ínglish klás is on uéndzdei)</p>
+
+    <label><strong>🎧 Pronunciación de los ejemplos</strong></label>
+    <audio controls preload="metadata">
+      <source src="12.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
+  <div>
+    <p>Las <strong>partes del día</strong> <i>(Parts of the Day)</i> sirven para indicar cuándo ocurre una acción.</p>
+  </div>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Español</th>
+          <th>Inglés</th>
+          <th>Pronunciación</th>
+          <th>Horario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Amanecer</td><td>Dawn</td><td>dón</td><td>5:00 – 6:00 a.m.</td></tr>
+        <tr><td>Salida del sol</td><td>Sunrise</td><td>sónraiz</td><td>6:00 – 6:30 a.m.</td></tr>
+        <tr><td>Mañana temprana</td><td>Early morning</td><td>érli mórnin</td><td>6:00 – 8:00 a.m.</td></tr>
+        <tr><td>Mañana</td><td>Morning</td><td>mórnin</td><td>8:00 – 12:00 p.m.</td></tr>
+        <tr><td>Mediodía</td><td>Noon / Midday</td><td>nún / míddei</td><td>12:00 p.m.</td></tr>
+        <tr><td>Tarde temprana</td><td>Early afternoon</td><td>érli áfternún</td><td>12:00 – 3:00 p.m.</td></tr>
+        <tr><td>Tarde</td><td>Afternoon</td><td>áfternún</td><td>12:00 – 6:00 p.m.</td></tr>
+        <tr><td>Atardecer</td><td>Dusk / Sunset</td><td>dósk / sónset</td><td>6:00 – 6:30 p.m.</td></tr>
+        <tr><td>Tarde-noche</td><td>Evening</td><td>ívnin</td><td>6:00 – 9:00 p.m.</td></tr>
+        <tr><td>Noche</td><td>Night</td><td>náit</td><td>9:00 p.m. – 12:00 a.m.</td></tr>
+        <tr><td>Medianoche</td><td>Midnight</td><td>mídnáit</td><td>12:00 a.m.</td></tr>
+        <tr><td>Madrugada</td><td>Early morning</td><td>érli mórnin</td><td>3:00 – 5:00 a.m.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <label><strong>🎧 Pronunciación de las partes del día</strong></label>
+  <audio controls preload="metadata">
+    <source src="13.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="examples">
+    <blockquote><b>Para un momento específico se usa <i>"at"</i>, para los demás <i>"in"</i>.</b></blockquote>
+    <p><strong>📘 Ejemplos:</strong></p>
+    <p>She studies in the <b>early morning</b> (shi stódiz in di érli mórnin)</p>
+    <p>I go to work in the <b>morning</b> (ai gó tu uork in de mórnin)</p>
+    <p>I have classes in the <b>early afternoon</b> (ai jév klásiz in di érli áfternún)</p>
+    <p>I take a nap in the <b>afternoon</b> (ai teik a nap in di áfternún)</p>
+    <p>We have dinner in the <b>evening</b> (ui jév díner in di ívnin)</p>
+    <p>Lunch is at <b>noon</b> (lónch is at nún)</p>
+    <p>Birds sing at <b>dawn</b> (berds sing at dón)</p>
+    <p>I go running at <b>sunrise</b> (ai gó rónin at sónraiz)</p>
+    <p>We walk on the beach at <b>sunset</b> (ui uók on de bich at sónset)</p>
+    <p>I watch TV at <b>night</b> (ai uóch tiví at náit)</p>
+    <p>The baby wakes up at <b>midnight</b> (de béibi ueiks ap at mídnáit)</p>
+
+    <label><strong>🎧 Pronunciación de los ejemplos</strong></label>
+    <audio controls preload="metadata">
+      <source src="14.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
+  <div>
+    <p><b>Otras formas de referirse a los días:</b></p>
+  </div>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Español</th>
+          <th>Inglés</th>
+          <th>Pronunciación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ayer</td><td>yesterday</td><td>yésterdei</td></tr>
+        <tr><td>Hoy</td><td>today</td><td>tudei</td></tr>
+        <tr><td>Mañana</td><td>tomorrow</td><td>tumórou</td></tr>
+        <tr><td>Anteayer</td><td>the day before yesterday</td><td>de dei bifór yésterdei</td></tr>
+        <tr><td>Pasado mañana</td><td>the day after tomorrow</td><td>de dei áfter tumórou</td></tr>
+        <tr><td>Esta mañana</td><td>this morning</td><td>dis mórnin</td></tr>
+        <tr><td>Esta tarde</td><td>this afternoon</td><td>dis áfternún</td></tr>
+        <tr><td>Esta noche</td><td>tonight</td><td>tunáit</td></tr>
+        <tr><td>Anoche</td><td>last night</td><td>lást náit</td></tr>
+        <tr><td>Mañana por la mañana</td><td>tomorrow morning</td><td>tumórou mórnin</td></tr>
+        <tr><td>Mañana por la tarde</td><td>tomorrow afternoon</td><td>tumórou áfternún</td></tr>
+        <tr><td>Mañana por la noche</td><td>tomorrow night</td><td>tumórou náit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <label><strong>🎧 Pronunciación de las expresiones</strong></label>
+  <audio controls preload="metadata">
+    <source src="15.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="examples">
+    <blockquote><b>Este tipo de expresiones no usa preposiciones <i>(at, on, in)</i>.</b></blockquote>
+    <p><strong>📘 Ejemplos:</strong></p>
+    <p>I went to school yesterday (ai uent tu skúul yésterdei)</p>
+    <p>I feel happy today (ai fíil jápi tudei)</p>
+    <p>We will travel tomorrow (ui uil trável tumórou)</p>
+    <p>I met him the day before yesterday (ai met jim de dei bifór yésterdei)</p>
+    <label><strong>🎧 Pronunciación de los ejemplos</strong></label>
+    <audio controls preload="metadata">
+      <source src="16.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
+</section>
+
+ <section id="page-4" class="card page" data-title="Lección 4: Meses, estaciones y años">
+<div class="alert-banner">
+  <div class="alert-container">
+    <div class="alert-icon" aria-hidden="true">🔊</div>
+    <div class="alert-text">
+      <h3>Audio guía: Lección 4</h3>
+      <p>Escucha esta introducción antes de comenzar.</p>
+    </div>
+    <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
+      <source src="l4.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+</div>
+ <br>
+
+  <div>
+    <h2>Lección 4: Meses, estaciones y años</h2>
+    <p>Los <strong>meses</strong> <i>(Months)</i> se usan para hablar de fechas, estaciones, cumpleaños y eventos. En inglés siempre se escriben con mayúscula inicial.</p>
+  </div>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Español</th>
+          <th>Inglés</th>
+          <th>Pronunciación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Enero</td><td>January</td><td>yánuéri</td></tr>
+        <tr><td>Febrero</td><td>February</td><td>fébruéri</td></tr>
+        <tr><td>Marzo</td><td>March</td><td>márch</td></tr>
+        <tr><td>Abril</td><td>April</td><td>éiprol</td></tr>
+        <tr><td>Mayo</td><td>May</td><td>mei</td></tr>
+        <tr><td>Junio</td><td>June</td><td>yún</td></tr>
+        <tr><td>Julio</td><td>July</td><td>yulái</td></tr>
+        <tr><td>Agosto</td><td>August</td><td>ógost</td></tr>
+        <tr><td>Septiembre</td><td>September</td><td>septémber</td></tr>
+        <tr><td>Octubre</td><td>October</td><td>októuber</td></tr>
+        <tr><td>Noviembre</td><td>November</td><td>novémber</td></tr>
+        <tr><td>Diciembre</td><td>December</td><td>disémber</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <label><strong>🎧 Pronunciación de los meses</strong></label>
+  <audio controls preload="metadata">
+    <source src="17.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="examples">
+    <blockquote><b>Para los meses se usa: in + month → in May, in July, etc.</b></blockquote>
+    <p><strong>📘 Ejemplos:</strong></p>
+    <p>My birthday is in March (mai bérzdei is in márch)</p>
+    <p>School starts in August (skúl stárts in ógost)</p>
+    <p>Christmas is in December (krístmas is in disémber)</p>
+
+    <label><strong>🎧 Pronunciación de los ejemplos</strong></label>
+    <audio controls preload="metadata">
+      <source src="18.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div> <br>
+
+  <div>
+    <p>Las  <strong>estaciones </strong> <i>(Seasons)</i> se usan para describir el clima, hablar de actividades típicas del año y ubicar momentos o periodos en el tiempo.</p>
+  </div>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Español</th>
+          <th>Inglés</th>
+          <th>Pronunciación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Primavera</td><td>Spring</td><td>spríng</td></tr>
+        <tr><td>Verano</td><td>Summer</td><td>sómer</td></tr>
+        <tr><td>Otoño</td><td>Fall</td><td>fól</td></tr>
+        <tr><td>Invierno</td><td>Winter</td><td>wínter</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <label><strong>🎧 Pronunciación de las estaciones</strong></label>
+  <audio controls preload="metadata">
+    <source src="19.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="examples">
+    <blockquote><b>Para las estaciones se usa: in + season → in summer, in spring, etc.</b></blockquote>
+    <p><strong>📘 Ejemplos:</strong></p>
+    <p>We go to the beach in summer (ui gó tu de bích in sómer)</p>
+    <p>Leaves fall from the trees in autumn (lívs fól from de trís in ótom)</p>
+    <p>It snows a lot in winter (it snóus a lot in wínter)</p>
+
+    <label><strong>🎧 Pronunciación de los ejemplos</strong></label>
+    <audio controls preload="metadata">
+      <source src="20.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div> <br>
+
+  <div>
+    <p>Los<strong> años </strong><i>(Years)</i> se usan para hablar de fechas históricas, nacimientos, eventos importantes o planes futuros. Generalmente se pronuncian en dos partes.</p>
+  </div>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Forma común</th>
+          <th>Pronunciación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1980</td><td>nineteen eighty</td><td>naintín éiti</td></tr>
+        <tr><td>1965</td><td>nineteen sixty-five</td><td>naintín síksti faiv</td></tr>
+        <tr><td>1776</td><td>seventeen seventy-six</td><td>séventín sévnti siks</td></tr>
+        <tr><td>2000</td><td>two thousand</td><td>tchu záusand</td></tr>
+        <tr><td>2005</td><td>two thousand five / twenty oh five</td><td>tchu záusand faiv / tuénti ou faiv</td></tr>
+        <tr><td>2022</td><td>twenty twenty-two</td><td>tuénti tuénti tchu</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <label><strong>🎧 Pronunciación de los años</strong></label>
+  <audio controls preload="metadata">
+    <source src="21.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="examples">
+    <blockquote><b>Para los años se usa: in + year → in 1950, in 2000, etc.</b></blockquote>
+    <p><strong>📘 Ejemplos:</strong></p>
+    <p>I was born in 2005 (ai uos bórn in tchu záusand faiv)</p>
+    <p>The school opened in 1980 (de skúul óupend in naintín éiti)</p>
+    <p>We got married in 2022 (ui got mérrid in tuénti tuénti tchu)</p>
+
+    <label><strong>🎧 Pronunciación de los ejemplos</strong></label>
+    <audio controls preload="metadata">
+      <source src="22.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
+</section>
+
+<section id="page-5" class="card page" data-title="Lección 5: fechas, formatos y cumpleaños">
+<div class="alert-banner">
+  <div class="alert-container">
+    <div class="alert-icon" aria-hidden="true">🔊</div>
+    <div class="alert-text">
+      <h3>Audio guía: Lección 5</h3>
+      <p>Escucha esta introducción antes de comenzar.</p>
+    </div>
+    <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
+      <source src="l5.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+</div>
+ <br>
+
+  <div>
+    <h2>Lección 5: Fechas - Dates</h2>
+    <p>Las <strong>fechas</strong> <i>(Dates)</i> se usan para indicar nacimientos, reuniones o eventos, escribir documentos oficiales (formularios, cartas, contratos), expresar pasado o futuro en una conversación.</p>
+    <blockquote>
+      <p>Para USA se usa Month day, year → <strong>March 15, 2025.</strong></p>
+    </blockquote>
+  </div>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Pronunciación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>January 1, 2024</td><td>yánuari ferst, tuénti tuénti fór</td></tr>
+        <tr><td>July 4, 1776</td><td>yulái fórz, séventín sévnti siks</td></tr>
+        <tr><td>October 31, 2025</td><td>októuber zérti férst, tuénti tuénti faiv</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="audio-section">
+    <label><strong>🎧 Pronunciación de las fechas</strong></label>
+    <audio controls preload="metadata">
+      <source src="23.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div><br>
+
+  <div class="subsection">
+    <p>Para <strong>Cumpleaños</strong> <i>(Birthdays)</i> se usa el verbo “to be born” (nacer) o “my birthday is on...” (mi cumpleaños es el...).</p>
+    <div class="examples">
+      <blockquote><b>Para fechas específicas se usa <i>“on”</i> (on July 30th).</b></blockquote>
+      <p><strong>🔤 Ejemplos:</strong></p>
+      <p>My birthday is in July (mai bérzdei is in yulái)</p>
+      <p>My birthday is on July fifteenth (mai bérzdei is on yulái fiftín)</p>
+      <p>I was born on July fifteenth, two thousand and five (ai uos born on yulái fiftín, tchu záusand en faiv)</p>
+      <label><strong>🎧 Pronunciación de los cumpleaños</strong></label>
+      <audio controls preload="metadata">
+        <source src="24.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+
+
+  </div>
+
+  <div class="subsection">
+    <p>Las <strong>décadas</strong> <i>(Decades)</i> se expresan con el número del año + s.</p>
+    <div class="examples">
+      <p><strong>🔤 Ejemplos:</strong></p>
+      <p>The 1990s (de náintín náintiz)</p>
+      <p>The 2000s (de tchu záusands)</p> <br>
+      <p><b>También se puede usar con apóstrofe para abreviar</b>:</p>
+      <p>The ’90s (de náintiz) <br> The ’80s (de éitiz)</p>
+    </div>
+  </div><br>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Década</th>
+          <th>En inglés</th>
+          <th>Pronunciación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1900s</td><td>the nineteen hundreds</td><td>de naintín jóndreds</td></tr>
+        <tr><td>1910s</td><td>the nineteen tens</td><td>de naintín tenz</td></tr>
+        <tr><td>1920s</td><td>the nineteen twenties</td><td>de naintín tuentiz</td></tr>
+        <tr><td>1930s</td><td>the nineteen thirties</td><td>de naintín zértiz</td></tr>
+        <tr><td>1940s</td><td>the nineteen forties</td><td>de naintín fórtiz</td></tr>
+        <tr><td>1950s</td><td>the nineteen fifties</td><td>de naintín fíftiz</td></tr>
+        <tr><td>1960s</td><td>the nineteen sixties</td><td>de naintín síkstiz</td></tr>
+        <tr><td>1970s</td><td>the nineteen seventies</td><td>de naintín séventiz</td></tr>
+        <tr><td>1980s</td><td>the nineteen eighties</td><td>de naintín éitiz</td></tr>
+        <tr><td>1990s</td><td>the nineteen nineties</td><td>de naintín náintiz</td></tr>
+        <tr><td>2000s</td><td>the two thousands</td><td>de tchu záusands</td></tr>
+        <tr><td>2010s</td><td>the twenty tens</td><td>de tuénti tenz</td></tr>
+        <tr><td>2020s</td><td>the twenty twenties</td><td>de tuénti tuentiz</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="audio-section">
+    <label><strong>🎧 Pronunciación de las décadas</strong></label>
+    <audio controls preload="metadata">
+      <source src="25.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
+  <div class="subsection">
+    <p>Los <strong>siglos</strong> <i>(Centuries)</i> se usa el número ordinal + “century”.</p>
+    <div class="examples">
+      <p><strong>🔤 Ejemplos:</strong></p>
+      <p>The 20th century (de tuéntieth sénchuri)</p>
+      <p>The 21st century (de tuénti férst sénchuri)</p>
+    </div>
+  </div><br>
+
+  <div class="styled-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Siglo</th>
+          <th>En inglés</th>
+          <th>Pronunciación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>15th</td><td>the fifteenth century</td><td>de fiftín sénchuri</td></tr>
+        <tr><td>16th</td><td>the sixteenth century</td><td>de sixtín sénchuri</td></tr>
+        <tr><td>17th</td><td>the seventeenth century</td><td>de séventín sénchuri</td></tr>
+        <tr><td>18th</td><td>the eighteenth century</td><td>de éitín sénchuri</td></tr>
+        <tr><td>19th</td><td>the nineteenth century</td><td>de naintín sénchuri</td></tr>
+        <tr><td>20th</td><td>the twentieth century</td><td>de tuéntieth sénchuri</td></tr>
+        <tr><td>21st</td><td>the twenty-first century</td><td>de tuénti férst sénchuri</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="audio-section">
+    <label><strong>🎧 Pronunciación de los siglos</strong></label>
+    <audio controls preload="metadata">
+      <source src="26.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div><br>
+</section>
+
+<section id="page-6" class="card page" data-title="Lección 6: horas">
+  <div class="alert-banner">
+  <div class="alert-container">
+    <div class="alert-icon" aria-hidden="true">🔊</div>
+    <div class="alert-text">
+      <h3>Audio guía: Lección 6</h3>
+      <p>Escucha esta introducción antes de comenzar.</p>
+    </div>
+    <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
+      <source src="l6.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+</div>
+ <br>
+
+  <div>
+    <h2>Lección 6: La hora - The time </h2>
+    <p>La <b>hora</b> <i>(Time)</i> indica el momento del día en que ocurre un evento. 
+      En inglés se puede expresar en formato de 12 horas (AM/PM) o formato de 24 horas (militar), 
+      además existe el formato analógico y el formato digital.</p>
+    <p>El <strong>formato analógico</strong> es la forma de representar la hora usando un reloj 
+      con manecillas, como los relojes tradicionales de pared o de pulsera. Las expresiones usuales son: 
+      <b>o’clock</b>, <b>past</b>, <b>quarter to</b>, <b>half past</b> y <b>to</b>.</p>
+  </div>
+
+  <div class="examples">
+    <p><strong>🔤 Ejemplos:</strong></p>
+    <p><b>🕛 Para horas exactas:</b></p>
+    <p>1:00 → It’s one o’clock (its uan óklok)</p>
+    <p>12:00 → It’s twelve o’clock (its tuélv óklok)</p>
+
+    <p><b>🕜 Para horas entre 00 y 30:</b></p>
+    <p>3:04 → It’s four past three (its fór past zrí)</p>
+    <p>3:15 → It’s a quarter past three (its a kuárer past zrí)</p>
+    <p>3:30 → It’s half past three (its jáf past zrí)</p>
+
+    <p><b>🕝 Para horas entre 30 y 59:</b></p>
+    <p>3:40 → It’s twenty to four (its tuénti tú fór)</p>
+    <p>3:45 → It’s a quarter to four (its a kuárer tu fór)</p>
+    <p>3:53 → It’s seven to four (its séven tú fór)</p>
+
+    <div class="audio-section">
+      <label><strong>🎧 Pronunciación de la hora</strong></label>
+      <audio controls preload="metadata">
+        <source src="27.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+  </div>
+
+  <p>El <b>formato digital</b> es la forma de mostrar la hora usando números, como en un reloj electrónico, 
+  celular o computadora. En este formato no se usa la partícula <i>It’s</i> y la hora se divide en dos partes:</p>  
+
+  <div class="examples">
+    <p><strong>🔤 Ejemplos:</strong></p>
+    <p>2:30 → Two thirty (tchu zérti)</p>
+    <p>3:00 → Three o’clock (zrí óklok)</p>
+    <p>3:05 → Three oh five (zrí ou faiv)</p>
+    <p>7:45 → Seven forty-five (séven fórti faiv)</p>
+
+    <div class="audio-section">
+      <label><strong>🎧 Pronunciación de la hora</strong></label>
+      <audio controls preload="metadata">
+        <source src="28.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+  </div>
+
+  <p>En el <b>formato digital</b> también se puede usar AM/PM. 
+  La diferencia con los anteriores ejemplos es agregar las partes del día: </p>
+
+  <div class="examples">
+    <p><strong>🔤 Ejemplos:</strong></p>
+    <p>4:45 AM → Four forty-five in the morning (fór fórti faiv in de mórnin)</p>
+    <p>11:55 AM → Eleven fifty-five in the morning (iléven fífti faiv in de mórnin)</p>
+    <p>2:15 PM → Two fifteen in the afternoon (tchu fiftín in di áfternún)</p>
+    <p>6:20 PM → Six twenty in the evening (siks tuénti in di ívnin)</p>
+    <p>11:55 PM → Eleven fifty-five at night (iléven fífti faiv at náit)</p>
+    <blockquote>
+      Desde 12 AM a 12 PM se usa <b>morning</b>, de 12 PM a 6 PM se usa <b>afternoon</b>, 
+      de 6 PM a 10 PM se usa <b>evening</b> y desde 10 PM a 12 AM se usa <b>at night</b> 
+      (es una aproximación).
+    </blockquote>
+
+    <div class="audio-section">
+      <label><strong>🎧 Pronunciación de la hora</strong></label>
+      <audio controls preload="metadata">
+        <source src="29.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+  </div>
+
+  <p>El <b>formato militar</b> de la hora es una forma de escribir la hora usando el sistema de 24 horas, 
+    sin AM ni PM, tal como se usa en el ejército, la aviación, hospitales, transporte, etc.</p>
+
+  <div class="examples">
+    <p><strong>🔤 Ejemplos:</strong></p>
+    <p>1:00 AM → 0100: Zero one hundred (zírou uan jéndred)</p>
+    <p>8:15 AM → 0815: Zero eight fifteen (zírou éit fiftín)</p>
+    <p>12:00 PM → 1200: Twelve hundred (tuélv jéndred)</p>
+    <p>3:30 PM → 1530: Fifteen thirty (fiftín zérti)</p>
+    <p>10:50 PM → 2250: Twenty-two fifty (tuénti tú fífti)</p>
+
+    <div class="audio-section">
+      <label><strong>🎧 Pronunciación de la hora</strong></label>
+      <audio controls preload="metadata">
+        <source src="30.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+  </div>
+
+</section>
+
+<section  id="page-7" class="card page" data-title="Lección 7: presentarse">
+  <div class="alert-banner">
+  <div class="alert-container">
+    <div class="alert-icon" aria-hidden="true">🔊</div>
+    <div class="alert-text">
+      <h3>Audio guía: Lección 7</h3>
+      <p>Escucha esta introducción antes de comenzar.</p>
+    </div>
+    <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
+      <source src="l7.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+</div>
+ <br>
+
+<div>
+<h2>Lección 7. Presentarse y preguntar la hora/fecha</h2>
+<p>Los <b>saludos (Greetings):</b> se usan para iniciar una conversación de manera amable y respetuosa. 
+  La elección del saludo depende de la hora del día y del nivel de formalidad.</p>
+</div>
+
+<div class="styled-table">
+  <table >
+<thead>
+<tr><th>Inglés</th><th>Pronunciación</th><th>Traducción</th></tr>
+</thead>
+<tbody>
+<tr><td>Hello</td><td>jelóu</td><td>Hola (formal)</td></tr>
+<tr><td>Hi</td><td>jai</td><td>Hola (informal)</td></tr>
+<tr><td>Good morning</td><td>gud mórnin</td><td>Buenos días</td></tr>
+<tr><td>Good afternoon</td><td>gud áfternún</td><td>Buenas tardes</td></tr>
+<tr><td>Good evening</td><td>gud ívnin</td><td>Buenas noches</td></tr>
+</tbody>
+  </table>
+</div>
+
+<div class="audio-section">
+    <label><strong>Pronunciación de los saludos</strong></label>
+    <audio controls preload="metadata">
+      <source src="31.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+    </div>
+    <br>
+<div>
+  <p>Las <b>despedidas (Farewells)</b> se usan para finalizar una conversación de manera cordial y educada. 
+    Al igual que los saludos, pueden variar según el nivel de formalidad y la relación entre las personas.</p>
+</div>
+
+<div class="styled-table">
+  <table >
+<thead>
+<tr><th>Inglés</th><th>Pronunciación</th><th>Traducción</th></tr>
+</thead>
+<tbody>
+<tr><td>Goodbye</td><td>gudbái</td><td>Adiós (formal)</td></tr>
+<tr><td>Have a nice day</td><td>jav a nais dei</td><td>Ten un buen día</td></tr>
+<tr><td>Take care</td><td>téik kér</td><td>Cuídate</td></tr>
+<tr><td>Bye</td><td>bái</td><td>Adiós (informal)</td></tr>
+<tr><td>See you later</td><td>sí yu léirer</td><td>Te veo luego</td></tr>
+<tr><td>Good night</td><td>gud náit</td><td>Buenas noches</td></tr>
+</tbody>
+  </table>
+</div>
+
+<div class="audio-section">
+    <label><strong>Pronunciación de las despedidas</strong></label>
+    <audio controls preload="metadata">
+      <source src="32.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+</div>
+<br>
+
+<div>
+  <p><b>Presentarse (Introducing yourself)</b> es una función básica en cualquier idioma: permite iniciar 
+    relaciones sociales o profesionales y mostrar cortesía en situaciones nuevas.</p>
+</div>
+
+<div class="styled-table">
+  <table >
+<thead>
+<tr><th>Inglés</th><th>Pronunciación</th><th>Traducción</th></tr>
+</thead>
+<tbody>
+<tr><td>My name is</td><td>mai néim is</td><td>Mi nombre es</td></tr>
+<tr><td>I am</td><td>ai am</td><td>Yo soy</td></tr>
+<tr><td>Nice to meet you </td><td>nais tu míit iu</td><td>Encantado de conocerte</td></tr>
+<tr><td>What is your name?</td><td>wuat is yor néim?</td><td>¿Cómo te llamas?</td></tr>
+</tbody>
+  </table>
+</div>
+
+<div class="audio-section">
+    <label><strong>Pronunciación de las presentaciones</strong></label>
+    <audio controls preload="metadata">
+      <source src="33.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
+<div class="examples">
+    <p><strong>🔤 Ejemplos:</strong></p>
+    <p>Hello, My name is Sarah. What’s your name? (jelóu, mai néim is Sarah. wuat is yor néim?) → Me llamo Sarah. ¿Cómo te llamas?</p>
+    <p>Hi! I’m William. Nice to meet you. (jai! ai am William. nais tu míit iu.) → ¡Hola! Soy William. Encantado de conocerte.</p>
+    <p>Have a nice day William. (jav a nais dei William.) → Ten un buen día William.</p>
+    <div class="audio-section">
+    <label><strong>Pronunciación de los ejemplos</strong></label>
+    <audio controls preload="metadata">
+      <source src="34.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+</div>
+
+<p>Para <b>pedir y decir la hora (Asking and telling the time)</b> en inglés podemos usar las siguientes frases.</p>
+<div class="styled-table">
+  <table>
+    <thead>
+      <tr>
+      <th>Inglés</th>
+      <th>Pronunciación</th>
+      <th>Traducción</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>What time is it?</td>
+      <td>wuat táim is it?</td>
+      <td>¿Qué hora es?</td>
+    </tr>
+    <tr>
+      <td>It’s... o’clock</td>
+      <td>its ... óklok</td>
+      <td>Son las... en punto</td>
+    </tr>
+    <tr>
+      <td>It’s half past...</td>
+      <td>its háf past...</td>
+      <td>Son las y media</td>
+    </tr>
+    <tr>
+      <td>It’s a quarter past...</td>
+      <td>its a kuárer past...</td>
+      <td>Son las y cuarto</td>
+    </tr>
+    <tr>
+      <td>It’s a quarter to...</td>
+      <td>its a kuárer tu...</td>
+      <td>Son las menos cuarto</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+     
+<div class="audio-section">
+  <label><strong>Pronunciación de la tabla</strong></label>
+  <audio controls preload="metadata">
+    <source src="35.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+</div>
+
+<div class="examples">
+  <p><strong>🔤 Ejemplos:</strong></p>
+  <p>What time is it? (wuat táim is it?) → ¿Qué hora es?</p>
+  <p>It’s three o’clock. (its zrí óklok.) → Son las tres en punto.</p>
+  <p>It’s half past seven. (its háf past séven.) → Son las siete y media.</p>
+  <p>It’s a quarter to nine. (its a kuárer tu náin.) → Son las nueve menos cuarto.</p>
+  <div class="audio-section">
+    <label><strong>Pronunciación de los ejemplos</strong></label>
+    <audio controls preload="metadata">
+      <source src="36.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+</div>
+
+<div>
+  <p>Para <b>pedir y decir la fecha (Asking and telling the date)</b> se pueden usar las siguientes frases.</p>
+</div>
+
+<div class="styled-table">
+  <table>
+<thead>
+<tr>
+<th>Inglés</th>
+<th>Pronunciación</th>
+<th>Español</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What’s the date today?</td>
+<td>wuats de deit tudéi?</td>
+<td>¿Qué fecha es hoy?</td>
+</tr>
+<tr>
+<td>Today is...</td>
+<td>tudéi is...</td>
+<td>Hoy es...</td>
+</tr>
+<tr>
+<td>January 5th, 2025</td>
+<td>yánuari fifz, tuénti tuénti faiv</td>
+<td>5 de enero de 2025</td>
+</tr>
+<tr>
+<td>My birthday is on...</td>
+<td>mai bérzdei is on...</td>
+<td>Mi cumpleaños es el...</td>
+</tr>
+</tbody>
+  </table>
+</div>
+     
+<div class="audio-section">
+  <label><strong>Pronunciación de la tabla</strong></label>
+  <audio controls preload="metadata">
+    <source src="37.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+</div>
+
+<div class="examples">
+  <p><strong>🔤 Ejemplos:</strong></p>
+  <p>What’s the date today? (wuats de deit tudéi?) → ¿Qué fecha es hoy?</p>
+  <p>Today is March 10th, 2024. (tudéi is márch ténz, tuénti tuénti fór) → Hoy es 10 de marzo de 2024.</p>
+  <p>My birthday is on July 19th. (mai bérzdei is on yulái náintínz) → Mi cumpleaños es el 19 de julio.</p>
+  <div class="audio-section">
+      <label><strong>Pronunciación de los ejemplos</strong></label>
+      <audio controls preload="metadata">
+        <source src="38.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+</div>
+
+</section>
+
+  </main>
+
+  <footer>
+  </footer>
+  
+    <nav id="mainNav" aria-label="Navegación de lecciones">
+    </nav>
+
+  <script>
+    const pages = Array.from(document.querySelectorAll('.page'));
+    const nav = document.getElementById('mainNav');
+
+    // Build nav links from sections
+    pages.forEach((sec, i) =>{
+      const id = `page-${i+1}`;
+      sec.id = id; // ensure id
+      const a = document.createElement('a');
+      a.href = `#${id}`;
+      a.textContent = i===0? `1` : `${i+1}`;
+      a.setAttribute('aria-label', sec.dataset.title || `Lección ${i+1}`);
+      nav.appendChild(a);
+    });
+
+    function showPage(hash){
+      const target = hash ? document.querySelector(hash) : pages[0];
+      if(!target) return;
+      pages.forEach(p => p.style.display = (p===target ? 'block' : 'none'));
+      // set active link
+      Array.from(nav.children).forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${target.id}`));
+      document.title = target.dataset.title || document.title;
+      // pause all audios except the one in the target
+      document.querySelectorAll('audio').forEach(a=>{ if(!target.contains(a)) { a.pause(); a.currentTime=0 } });
+      // set focus to first control for accessibility
+      const firstBtn = target.querySelector('.btn'); if(firstBtn) firstBtn.focus();
+      window.scrollTo(0, 0);
+
+    }
+
+    // initial render
+    if(location.hash) showPage(location.hash); else showPage('#page-1');
+
+    window.addEventListener('hashchange', ()=> showPage(location.hash));
+
+    // Play-all buttons: plays that page's audio
+    document.getElementById('playAll1').addEventListener('click', ()=>{ const a=document.getElementById('audio-1'); a.play(); });
+    document.getElementById('playAll2').addEventListener('click', ()=>{ const a=document.getElementById('audio-2'); a.play(); });
+    document.getElementById('playAll3').addEventListener('click', ()=>{ const a=document.getElementById('audio-3'); a.play(); });
+    document.getElementById('playAll4').addEventListener('click', ()=>{ const a=document.getElementById('audio-4'); a.play(); });
+</script>
+</body>
+</html>
