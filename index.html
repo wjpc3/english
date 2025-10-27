@@ -16,7 +16,7 @@
 .alert-banner {
   background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
   border: 1px solid var(--accent);
-  border-left: 6px solid var(--accent);
+  border-left: 2px solid var(--accent);
   border-radius: 12px;
   box-shadow: 0 4px 10px var(--shadow);
   padding: 0.7rem 1rem;
@@ -32,16 +32,6 @@
   flex-wrap: wrap;
 }
 
-/* 🔊 Icono animado */
-.alert-icon {
-  font-size: 1.8rem;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.15); opacity: 0.8; }
-}
 
 /* 📝 Texto */
 .alert-text {
@@ -167,6 +157,7 @@ body {
   background: #ffffff;
   border-radius: 16px;
   padding: 25px;
+  text-align: center;
   margin: 30px auto;
   max-width: 900px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
@@ -188,9 +179,11 @@ body {
 }
 
 .card.page h2 {
-  color: #ff0202;
-  text-align: center;
+  color: #ff0000e6;
   margin-bottom: 15px;
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 2.6em;
+  
 }
 
 .card.page p {
@@ -353,7 +346,6 @@ label {
     <!-- 🔊 Banner superior atractivo con audio -->
 <div class="alert-banner">
   <div class="alert-container">
-    <div class="alert-icon" aria-hidden="true">🔊</div>
     <div class="alert-text">
       <h3>Audio guía: Lección 1</h3>
       <p>Escucha esta introducción antes de comenzar.</p>
@@ -366,15 +358,11 @@ label {
 </div>
  <br>
   
-  <h2 style="
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-family: 'Verdana', sans-serif;
-  font-weight: bold;
-">
-  Lección 1: El alfabeto - The alphabet
-</h2>
+  <div >
+    <h2>Lección 1: El alfabeto - The alphabet </h2>
+    <p><strong>The alphabet (Di áLfabet):</strong> el alfabeto inglés tiene 26 letras (A–Z). 
+      Cada letra tiene un nombre y un sonido. Se usa para deletrear (<i>spell</i>) nombres y palabras.</p>
+  </div>
 
   <div  class="styled-table" >
   <table>
@@ -453,7 +441,6 @@ label {
  <section id="page-2" class="card page" data-title="Lección 2: Los números">
 <div class="alert-banner">
   <div class="alert-container">
-    <div class="alert-icon" aria-hidden="true">🔊</div>
     <div class="alert-text">
       <h3>Audio guía: Lección 2</h3>
       <p>Escucha esta introducción antes de comenzar.</p>
@@ -657,7 +644,6 @@ label {
 <section id="page-3" class="card page" data-title="Lección 3: Días y sus partes">
   <div class="alert-banner">
   <div class="alert-container">
-    <div class="alert-icon" aria-hidden="true">🔊</div>
     <div class="alert-text">
       <h3>Audio guía: Lección 3</h3>
       <p>Escucha esta introducción antes de comenzar.</p>
@@ -831,7 +817,6 @@ label {
  <section id="page-4" class="card page" data-title="Lección 4: Meses, estaciones y años">
 <div class="alert-banner">
   <div class="alert-container">
-    <div class="alert-icon" aria-hidden="true">🔊</div>
     <div class="alert-text">
       <h3>Audio guía: Lección 4</h3>
       <p>Escucha esta introducción antes de comenzar.</p>
@@ -986,7 +971,6 @@ label {
 <section id="page-5" class="card page" data-title="Lección 5: fechas, formatos y cumpleaños">
 <div class="alert-banner">
   <div class="alert-container">
-    <div class="alert-icon" aria-hidden="true">🔊</div>
     <div class="alert-text">
       <h3>Audio guía: Lección 5</h3>
       <p>Escucha esta introducción antes de comenzar.</p>
@@ -1137,7 +1121,6 @@ label {
 <section id="page-6" class="card page" data-title="Lección 6: horas">
   <div class="alert-banner">
   <div class="alert-container">
-    <div class="alert-icon" aria-hidden="true">🔊</div>
     <div class="alert-text">
       <h3>Audio guía: Lección 6</h3>
       <p>Escucha esta introducción antes de comenzar.</p>
@@ -1254,7 +1237,6 @@ label {
 <section  id="page-7" class="card page" data-title="Lección 7: presentarse">
   <div class="alert-banner">
   <div class="alert-container">
-    <div class="alert-icon" aria-hidden="true">🔊</div>
     <div class="alert-text">
       <h3>Audio guía: Lección 7</h3>
       <p>Escucha esta introducción antes de comenzar.</p>
@@ -1542,5 +1524,4 @@ label {
     document.getElementById('playAll4').addEventListener('click', ()=>{ const a=document.getElementById('audio-4'); a.play(); });
 </script>
 </body>
-
 </html>
