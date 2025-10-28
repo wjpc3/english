@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curso de Inglés </title>
-  <style>
+ <style>
 :root {
   --bg-start: #fffbe7;
   --bg-end: #fff5c2;
@@ -13,6 +13,137 @@
   --shadow: rgba(0, 0, 0, 0.08);
 }
 
+/* ==== FONDO GENERAL (fusiona ambos) ==== */
+ body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #232526 0%, #fd7e35 100%);
+      font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
+      margin: 0;
+    }
+
+/* ==== CARD PRINCIPAL ==== */
+  .card {
+      width: 840px; max-width: 95vw;
+      padding: 20px 25px 24px 25px;
+      background: linear-gradient(115deg, #fdf6e3 75%, #ffa600 100%);
+      border-radius: 28px;
+      box-shadow: 0 10px 38px 0 rgba(60,100,200,0.17), 0 1.5px 4px #fd7e3588;
+      display: flex; flex-direction: column; align-items: center;
+      transition: transform .3s, box-shadow .3s;
+      margin: 22px;
+      text-align: center;
+    }
+
+
+/* ==== CARD PAGE VARIANTE ==== */
+.card.page {
+      background: linear-gradient(115deg, #eee8d6 75%, #ffe5b4 100%);
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 20px var(--shadow);
+  font-family: 'Poppins', sans-serif;
+}
+
+.card.page ul{
+    text-align: justify;
+    line-height: 1.3;
+    font-size: 1rem;
+}
+.card.page h2 {
+  font-size: 2em;
+  color: #ffd000;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1.2px;
+  background: transparent;
+  text-shadow:
+    0 0 10px #fc0000,
+    0 0 10px #fc0000,
+    0 0 10px #fc2000,
+    0 0 10px #fc2000;
+  margin-top: 13px;
+  margin-bottom: 0;
+  padding: 7px 0 0 0;
+  text-align: center;
+  transition: text-shadow 0.3s;
+}
+
+.card.page p {
+  font-size: 1rem;
+  line-height: 1.3;
+  text-align: justify;
+}
+
+/* ==== IMAGEN CARD ==== */
+.card-img {
+  width: 100%;
+  border-radius: 21px;
+  box-shadow: 0 4px 17px #0002;
+  margin-bottom: 18px;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+
+/* ==== LINEA DECORADA ==== */
+.linea-decorada {
+  width: 99%;
+  height: 5px;
+  border: none;
+  margin: 2px 0 2px 0;
+  background: linear-gradient(90deg, #ff7300, #e3cb3f, #ff7300);
+  border-radius: 8px;
+  box-shadow: 0 0 14px 2px #ff7300bb, 0 2px 18px #ffc80377;
+  animation: brillar 2s linear infinite alternate;
+}
+@keyframes brillar {
+  from { filter: brightness(.94);}
+  to   { filter: brightness(1.15);}
+}
+
+/* ==== TEXTO CARD ==== */
+.card-desc {
+  color: #3e2e0f;
+  font-size: 1.08em;
+  line-height: 1.48;
+  text-align: center;
+  margin-bottom: 22px;
+  margin-top: 0;
+}
+
+/* ==== BOTON CARD ==== */
+.card-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffc03d, #fd7e35 60%);
+  color: #fff;
+  padding: 9px 28px;
+  border-radius: 17px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #fc983944;
+  font-weight: bold;
+  font-size: 1.09em;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  transition: background .25s, box-shadow .25s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.card-btn:hover {
+  background: linear-gradient(90deg, #fd7e35, #ffc03d 80%);
+  box-shadow: 0 6px 20px #fd7e3555;
+}
+@media (max-width: 600px) {
+  .card { width: 97vw; padding: 10px 2vw 16px 2vw; }
+}
+
+/* ==== ALERTA ==== */
 .alert-banner {
   background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
   border: 1px solid var(--accent);
@@ -23,7 +154,6 @@
   margin-bottom: 1.2rem;
   animation: fadeIn 0.8s ease;
 }
-
 .alert-container {
   display: flex;
   align-items: center;
@@ -32,35 +162,27 @@
   flex-wrap: wrap;
 }
 
-
-/* 📝 Texto */
 .alert-text {
   flex: 1;
   color: var(--text-dark);
   min-width: 220px;
 }
-
 .alert-text h3 {
   margin: 0;
   font-size: 1.1rem;
   color: #222;
   font-weight: 600;
 }
-
 .alert-text p {
   margin: 0.2rem 0 0 0;
   font-size: 0.9rem;
   color: #555;
 }
-
-/* 🎧 Reproductor */
 .alert-audio {
   flex-shrink: 0;
   height: 36px;
   accent-color: var(--accent);
 }
-
-/* 🌐 Adaptabilidad */
 @media (max-width: 680px) {
   .alert-container {
     flex-direction: column;
@@ -71,8 +193,6 @@
     width: 100%;
   }
 }
-
-/* ✨ Animación de entrada */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -84,11 +204,7 @@
   }
 }
 
-
-body {
-      background-color: #f0f8ff; /* color de fondo (azul claro) */
-    }
-/* 🌟 NAV principal con estilo "glass" */
+/* ==== NAV GLASS ==== */
 #mainNav {
   position: sticky;
   top: 0;
@@ -106,8 +222,6 @@ body {
   animation: fadeInDown 0.8s ease;
   transition: all 0.4s ease;
 }
-
-/* ✨ Enlaces del menú */
 #mainNav a {
   display: inline-block;
   margin: 0 8px;
@@ -122,16 +236,12 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
   transition: all 0.3s ease-in-out;
 }
-
-/* 🎈 Efecto hover con luz */
 #mainNav a:hover {
   background: linear-gradient(135deg, #ffffff, #e0e7ff);
   color: #407cff;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
 }
-
-/* 💎 Enlace activo */
 #mainNav a.active {
   background: linear-gradient(135deg, #548aff, #386af3);
   color: white;
@@ -139,8 +249,6 @@ body {
   transform: scale(1.08);
   box-shadow: 0 6px 18px rgba(30, 58, 138, 0.35);
 }
-
-/* 🔥 Animación al cargar */
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -151,52 +259,12 @@ body {
     transform: translateY(0);
   }
 }
-  /* ==== ESTILO GENERAL PARA TODAS LAS LECCIONES ==== */
-  
-.card.page {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 25px;
-  text-align: center;
-  margin: 30px auto;
-  max-width: 900px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  font-family: 'Poppins', sans-serif;
-}
 
-.card.page h1{
-  color: #ff0202;
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 2rem;
-}
-
-.card.page ul{
-    text-align: justify;
-    line-height: 1.3;
-      font-size: 1rem;
-
-}
-
-.card.page h2 {
-  color: #ff0000e6;
-  margin-bottom: 15px;
-  font-family: 'Comic Sans MS', sans-serif;
-  font-size: 2.2em;
-  
-}
-
-.card.page p {
-  font-size: 1rem;
-  line-height: 1.3;
-  text-align: justify;
-}
-
-/* ==== TABLAS MODERNAS ==== */
+/* ==== TABLAS ==== */
 .styled-table {
   display: flex;
-  justify-content: center; /* centra horizontalmente */
-  align-items: center;     /* opcional: centra verticalmente si el contenedor tiene altura */
+  justify-content: center;
+  align-items: center;
   margin-top: -20px;
   margin-bottom: -20px;
 }
@@ -208,27 +276,22 @@ body {
   border-radius: 10px;
   overflow: hidden;
 }
-
 .styled-table thead tr {
-  background: linear-gradient(180deg, #00b4d8, #00b4d8);
+  background: linear-gradient(180deg, #f59700, #e5c808);
   color: #fff;
   text-align: center;
   font-weight: bold;
 }
-
 .styled-table th, .styled-table td {
   padding: 12px 15px;
   text-align: center;
 }
-
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
-
 .styled-table tbody tr:nth-of-type(even) {
   background-color: #f3faff;
 }
-
 .styled-table tbody tr:hover {
   background-color: #caf0f8;
   transform: scale(1.01);
@@ -242,7 +305,6 @@ audio {
   width: 100%;
   max-width: 400px;
 }
-
 label {
   display: block;
   font-weight: bold;
@@ -258,22 +320,18 @@ label {
   border-radius: 10px;
   margin-top: 20px;
 }
-
 .examples p {
   margin: 5px 0;
 }
-
 .examples strong {
   color: #0a009c;
 }
 
-/* Evitar salto de página dentro de un elemento */
+/* ==== CONTROL DE SALTOS ==== */
 .no-break {
   page-break-inside: avoid;
   break-inside: avoid;
 }
-
-/* Evitar salto antes o después */
 .no-break-before {
   page-break-before: avoid;
   break-before: avoid;
@@ -282,9 +340,8 @@ label {
   page-break-after: avoid;
   break-after: avoid;
 }
-
-
 </style>
+
 </head>
 
 <body>
@@ -295,7 +352,10 @@ label {
   <main>
   <section id="page-0" class="card page" data-title="intro">
       <div>
-        <h1><span style="color:red">Bienvenido a inglés desde cero 🌐</span></h1> <br>
+        <img class="card-img" src="1.jpg" alt="Ejemplo 1">
+        <h2><span>Bienvenido a Inglés desde cero 🌐</span></h2> <br>
+              <hr class="linea-decorada">
+
         <p><b>Objetivo 🎯</b> <br>Esta web ha sido creada para acompañarte en el proceso de aprendizaje del inglés desde cero, 
           de manera práctica, gradual y orientada al uso real del idioma. Aquí encontrarás lecciones diseñadas para que 
           avances con seguridad en comprensión, pronunciación, escritura y escucha.</p>  
@@ -343,6 +403,8 @@ label {
     </section>
 
   <section id="page-1" class="card page" data-title="Lección 1: El alfabeto">
+            <img class="card-img" src="2.png" alt="Ejemplo 1">
+
     <!-- 🔊 Banner superior atractivo con audio -->
 <div class="alert-banner">
   <div class="alert-container">
@@ -360,6 +422,8 @@ label {
   
   <div >
     <h2>Lección 1: El alfabeto - The alphabet </h2>
+      <hr class="linea-decorada">
+
     <p><strong>The alphabet (Di áLfabet):</strong> el alfabeto inglés tiene 26 letras (A–Z). 
       Cada letra tiene un nombre y un sonido. Se usa para deletrear (<i>spell</i>) nombres y palabras.</p>
   </div>
@@ -456,6 +520,8 @@ label {
 
   <div>
     <h2>Lección 2: Los números - The numbers</h2>
+      <hr class="linea-decorada">
+
     <p><strong>Cardinal Numbers (Kárdinal námbers):</strong> los números cardinales se usan para contar cosas o personas, decir la edad, hablar de cantidades, dinero, números de teléfono, etc.</p>
   </div>
 
@@ -831,6 +897,8 @@ label {
 
   <div>
     <h2>Lección 4: Meses, estaciones y años</h2>
+      <hr class="linea-decorada">
+
     <p>Los <strong>meses</strong> <i>(Months)</i> se usan para hablar de fechas, estaciones, cumpleaños y eventos. En inglés siempre se escriben con mayúscula inicial.</p>
   </div>
 
@@ -985,6 +1053,8 @@ label {
 
   <div>
     <h2>Lección 5: Fechas - Dates</h2>
+      <hr class="linea-decorada">
+
     <p>Las <strong>fechas</strong> <i>(Dates)</i> se usan para indicar nacimientos, reuniones o eventos, escribir documentos oficiales (formularios, cartas, contratos), expresar pasado o futuro en una conversación.</p>
     <blockquote>
       <p>Para USA se usa Month day, year → <strong>March 15, 2025.</strong></p>
@@ -1135,6 +1205,8 @@ label {
 
   <div>
     <h2>Lección 6: La hora - The time </h2>
+      <hr class="linea-decorada">
+
     <p>La <b>hora</b> <i>(Time)</i> indica el momento del día en que ocurre un evento. 
       En inglés se puede expresar en formato de 12 horas (AM/PM) o formato de 24 horas (militar), 
       además existe el formato analógico y el formato digital.</p>
@@ -1251,6 +1323,8 @@ label {
 
 <div>
 <h2>Lección 7. Presentarse y preguntar la hora/fecha</h2>
+  <hr class="linea-decorada">
+
 <p>Los <b>saludos (Greetings):</b> se usan para iniciar una conversación de manera amable y respetuosa. 
   La elección del saludo depende de la hora del día y del nivel de formalidad.</p>
 </div>
@@ -1525,4 +1599,3 @@ label {
 </script>
 </body>
 </html>
-
