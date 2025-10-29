@@ -5,219 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curso de Inglés </title>
  <style>
-:root {
+  :root {
   --bg-start: #fffbe7;
   --bg-end: #fff5c2;
   --accent: #ffb300;
   --text-dark: #333;
-  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow: rgba(0,0,0,0.08);
 }
 
-/* ==== FONDO GENERAL (fusiona ambos) ==== */
- body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      background: linear-gradient(120deg, #232526 0%, #fd7e35 100%);
-      font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
-      margin: 0;
-    }
-
-/* ==== CARD PRINCIPAL ==== */
-  .card {
-      width: 840px; max-width: 95vw;
-      padding: 20px 25px 24px 25px;
-      background: linear-gradient(115deg, #fdf6e3 75%, #ffa600 100%);
-      border-radius: 28px;
-      box-shadow: 0 10px 38px 0 rgba(60,100,200,0.17), 0 1.5px 4px #fd7e3588;
-      display: flex; flex-direction: column; align-items: center;
-      transition: transform .3s, box-shadow .3s;
-      margin: 22px;
-      text-align: center;
-    }
-
-
-/* ==== CARD PAGE VARIANTE ==== */
-.card.page {
-      background: linear-gradient(115deg, #eee8d6 75%, #ffe5b4 100%);
-  border-radius: 16px;
-  padding: 25px;
-  text-align: center;
-  margin: 30px auto;
-  max-width: 900px;
-  box-shadow: 0 8px 20px var(--shadow);
-  font-family: 'Poppins', sans-serif;
-}
-
-.card.page ul{
-    text-align: justify;
-    line-height: 1.3;
-    font-size: 1rem;
-}
-.card.page h2 {
-  font-size: 2em;
-  color: #ffd000;
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 1.2px;
-  background: transparent;
-  text-shadow:
-    0 0 10px #fc0000,
-    0 0 10px #fc0000,
-    0 0 10px #fc2000,
-    0 0 10px #fc2000;
-  margin-top: 13px;
-  margin-bottom: 0;
-  padding: 7px 0 0 0;
-  text-align: center;
-  transition: text-shadow 0.3s;
-}
-
-.card.page p {
-  font-size: 1rem;
-  line-height: 1.3;
-  text-align: justify;
-}
-
-/* ==== IMAGEN CARD ==== */
-.card-img {
-  width: 100%;
-  border-radius: 21px;
-  box-shadow: 0 4px 17px #0002;
-  margin-bottom: 18px;
-  max-height: 180px;
-  object-fit: cover;
-}
-
-
-/* ==== LINEA DECORADA ==== */
-.linea-decorada {
-  width: 99%;
-  height: 5px;
-  border: none;
-  margin: 2px 0 2px 0;
-  background: linear-gradient(90deg, #ff7300, #e3cb3f, #ff7300);
-  border-radius: 8px;
-  box-shadow: 0 0 14px 2px #ff7300bb, 0 2px 18px #ffc80377;
-  animation: brillar 2s linear infinite alternate;
-}
-@keyframes brillar {
-  from { filter: brightness(.94);}
-  to   { filter: brightness(1.15);}
-}
-
-/* ==== TEXTO CARD ==== */
-.card-desc {
-  color: #3e2e0f;
-  font-size: 1.08em;
-  line-height: 1.48;
-  text-align: center;
-  margin-bottom: 22px;
-  margin-top: 0;
-}
-
-/* ==== BOTON CARD ==== */
-.card-btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #ffc03d, #fd7e35 60%);
-  color: #fff;
-  padding: 9px 28px;
-  border-radius: 17px;
-  text-decoration: none;
-  box-shadow: 0 2px 8px #fc983944;
-  font-weight: bold;
-  font-size: 1.09em;
-  letter-spacing: 1px;
-  margin-top: 6px;
-  transition: background .25s, box-shadow .25s;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-.card-btn:hover {
-  background: linear-gradient(90deg, #fd7e35, #ffc03d 80%);
-  box-shadow: 0 6px 20px #fd7e3555;
-}
-@media (max-width: 600px) {
-  .card { width: 97vw; padding: 10px 2vw 16px 2vw; }
-}
-
-/* ==== ALERTA ==== */
-.alert-banner {
-  background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
-  border: 1px solid var(--accent);
-  border-left: 2px solid var(--accent);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px var(--shadow);
-  padding: 0.7rem 1rem;
-  margin-bottom: 1.2rem;
-  animation: fadeIn 0.8s ease;
-}
-.alert-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.alert-text {
-  flex: 1;
-  color: var(--text-dark);
-  min-width: 220px;
-}
-.alert-text h3 {
+/* Fondo y estructura general */
+body {
   margin: 0;
-  font-size: 1.1rem;
-  color: #222;
-  font-weight: 600;
-}
-.alert-text p {
-  margin: 0.2rem 0 0 0;
-  font-size: 0.9rem;
-  color: #555;
-}
-.alert-audio {
-  flex-shrink: 0;
-  height: 36px;
-  accent-color: var(--accent);
-}
-@media (max-width: 680px) {
-  .alert-container {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-  .alert-audio {
-    width: 100%;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
+  background: linear-gradient(120deg, #232526 0%, #fd7e35 100%);
+  color: var(--text-dark);
+  overflow-x: hidden;
 }
 
-/* ==== NAV GLASS ==== */
+/* NAV FIJO GLASSMORPHISM RESPONSIVO */
 #mainNav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255,255,255,0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  border-radius: 20px 20px 20px 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-radius: 20px;
   text-align: center;
   padding: 15px 0;
-  margin: 0 auto 25px;
+  margin: 0 auto 25px auto;
   max-width: 900px;
   animation: fadeInDown 0.8s ease;
   transition: all 0.4s ease;
@@ -240,54 +60,101 @@
   background: linear-gradient(135deg, #ffffff, #e0e7ff);
   color: #407cff;
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 6px 15px rgba(37,99,235,0.25);
 }
 #mainNav a.active {
   background: linear-gradient(135deg, #548aff, #386af3);
   color: white;
   font-weight: 600;
   transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.35);
+  box-shadow: 0 6px 18px rgba(30,58,138,0.35);
+}
+@media (max-width: 680px) {
+  #mainNav {
+    max-width: 98vw;
+    padding: 10px 0;
+    border-radius: 13px;
+  }
+  #mainNav a {
+    padding: 9px 12px;
+    font-size: 0.97em;
+    margin: 0 3px;
+  }
 }
 @keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ==== TABLAS ==== */
-.styled-table {
+/* Contenedores principales */
+.card, .card.page {
+  max-width: 900px;
+  width: 97vw;
+  margin: 22px auto 28px auto;
+  border-radius: 22px;
+  background: linear-gradient(115deg, #fdf6e3 75%, #fbda9b 100%);
+  box-shadow: 0 10px 38px 0 rgba(60,100,200,0.17), 0 1.5px 4px #fd7e3588;
+  padding: 22px 3vw 28px 3vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-top: -20px;
-  margin-bottom: -20px;
+}
+
+/* Títulos */
+h1, h2{
+  font-family: 'Orbitron', 'Poppins', sans-serif;
+  color: #ffd000;
+  font-size: 2rem;
+
+  letter-spacing: 1px;
+  margin-top: 13px;
+  margin-bottom: 0;
+  text-align: center;
+  background: transparent;
+  text-shadow:
+    0 0 10px #fc0000,
+    0 0 10px #fc0000,
+    0 0 10px #fc2000,
+    0 0 10px #fc2000;
+}
+
+/* Texto y listas */
+p, ul, ol {
+  font-size:1.2rem;
+  line-height: 1.3;
+  text-align: justify;
+  margin: 0 0 1em 0;
+}
+ul, ol {
+  padding-left: 20px;
+}
+strong {
+  color: #0a009c;
+}
+
+/* Tablas responsivas */
+.styled-table {
+  width: 80%;
+  max-width: 100%;
+  margin: 0 auto 16px auto;
+  overflow-x: auto;
+  display: block;
 }
 .styled-table table {
-  width: 50%;
+  width: 100%;
   border-collapse: collapse;
-  margin: 25px 0;
   font-size: 1rem;
   border-radius: 10px;
   overflow: hidden;
 }
+
 .styled-table thead tr {
   background: linear-gradient(180deg, #f59700, #e5c808);
   color: #fff;
-  text-align: center;
-  font-weight: bold;
 }
 .styled-table th, .styled-table td {
-  padding: 12px 15px;
+  padding: 12px 8px;
   text-align: center;
-}
-.styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
 }
 .styled-table tbody tr:nth-of-type(even) {
   background-color: #f3faff;
@@ -295,10 +162,50 @@
 .styled-table tbody tr:hover {
   background-color: #caf0f8;
   transform: scale(1.01);
-  transition: all 0.2s ease;
+  transition: all 0.2s;
 }
 
-/* ==== AUDIO Y ETIQUETAS ==== */
+/* Banner de imagen responsivo */
+.banner-img, .card-img {
+  width: 100%;
+  aspect-ratio: 16/5;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px #0002;
+  margin-bottom: 18px;
+  display: block;
+}
+
+/* Ejemplos y bloques especiales */
+.examples {
+  background: #f1f9ff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+blockquote {
+  background: #fffbe7;
+  border-left: 4px solid var(--accent);
+  margin: 8px 0 16px 0;
+  padding: 10px 16px;
+  font-style: italic;
+  border-radius: 8px;
+}
+
+/* Línea decorada */
+.linea-decorada {
+  width: 99%;
+  height: 5px;
+  border: none;
+  background: linear-gradient(90deg, #ff7300, #e3cb3f, #ff7300);
+  border-radius: 8px;
+  box-shadow: 0 0 14px 2px #ff7300bb;
+  margin: 10px 0 16px 0;
+}
+
+/* Audio y etiquetas */
 audio {
   display: block;
   margin: 15px auto;
@@ -309,38 +216,71 @@ label {
   display: block;
   font-weight: bold;
   color: #0003bb;
-  margin-top: 20px;
+  margin-top: 12px;
   text-align: center;
 }
 
-/* ==== SECCIÓN DE EJEMPLOS ==== */
-.examples {
-  background: #f1f9ff;
-  padding: 15px 20px;
-  border-radius: 10px;
-  margin-top: 20px;
+/* Botones */
+.card-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffc03d, #fd7e35 60%);
+  color: #fff;
+  padding: 9px 28px;
+  border-radius: 17px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #fc983944;
+  font-weight: bold;
+  font-size: 1.07em;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background .25s, box-shadow .25s;
 }
-.examples p {
-  margin: 5px 0;
-}
-.examples strong {
-  color: #0a009c;
+.card-btn:hover {
+  background: linear-gradient(90deg, #fd7e35, #ffc03d 80%);
+  box-shadow: 0 6px 20px #fd7e3555;
 }
 
-/* ==== CONTROL DE SALTOS ==== */
-.no-break {
-  page-break-inside: avoid;
-  break-inside: avoid;
+/* Alertas */
+.alert-banner {
+  background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.2rem;
 }
-.no-break-before {
-  page-break-before: avoid;
-  break-before: avoid;
+
+
+/* Control de saltos en impresión */
+.no-break { page-break-inside: avoid; break-inside: avoid; }
+.no-break-before { page-break-before: avoid; break-before: avoid; }
+.no-break-after { page-break-after: avoid; break-after: avoid; }
+
+/* Responsive ajustes móviles */
+@media (max-width: 600px) {
+  .card, .card.page {
+    max-width: 99vw;
+    padding: 10px 4vw 16px 4vw;
+  }
+  .banner-img, .card-img {
+    aspect-ratio: 16/8;
+    max-height: 140px;
+    border-radius: 10px;
+  }
+  h1, h2, h3 { font-size: 1.3em; }
+  .styled-table th, .styled-table td { padding: 7px 3px; font-size: 0.95em; }
+  .examples { padding: 9px 8px; font-size: 0.96em; }
 }
-.no-break-after {
-  page-break-after: avoid;
-  break-after: avoid;
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-</style>
+
+ </style>
 
 </head>
 
@@ -352,8 +292,8 @@ label {
   <main>
   <section id="page-0" class="card page" data-title="intro">
       <div>
-        <img class="card-img" src="1.jpg" alt="Ejemplo 1">
-        <h2><span>Bienvenido a Inglés desde cero 🌐</span></h2> <br>
+<img src="1.jpg" class="banner-img" alt="Banner">
+        <h2><span>Bienvenido a Inglés desde cero 🏁</span></h2> <br>
               <hr class="linea-decorada">
 
         <p><b>Objetivo 🎯</b> <br>Esta web ha sido creada para acompañarte en el proceso de aprendizaje del inglés desde cero, 
@@ -392,9 +332,9 @@ label {
           <p><b>Nota final ⏰</b> <br> Se recomienda que cada día el estudiante dedique al menos 2 horas para abordar las lecciones: <br> 
           <ul><li>1 hora para estudiar el contenido,</li>
           <li>y 1 hora para comprender, practicar y evaluar lo aprendido.</li></ul> <br>
-          Ten en cuenta que el progreso depende principalmente de tu <b>disposición</b> e <b>interés:</b>
+          <p>          Ten en cuenta que el progreso depende principalmente de tu <b>disposición</b> e <b>interés:</b></p>
           <ul><li>La disposición es la actitud abierta y constante para aprender, incluso cuando el tema parece difícil.</li>
-          <li>El interés es la motivación personal que te impulsa a seguir aprendiendo porque reconoces el valor del conocimiento.</li></ul> <br>          
+          <li>El interés es la motivación personal que te impulsa a seguir aprendiendo porque reconoces el valor del conocimiento.</li></ul>          
         </p>
 
         <p><span style="color:#0f172a",><b><i>Si realmente deseas aprender inglés, encontrarás el tiempo y la forma de hacerlo. La constancia es la ruta al éxito.</i></b></span></p>
@@ -403,14 +343,14 @@ label {
     </section>
 
   <section id="page-1" class="card page" data-title="Lección 1: El alfabeto">
-            <img class="card-img" src="2.png" alt="Ejemplo 1">
+            <img src="2.png" class="banner-img" alt="Banner">
+
 
     <!-- 🔊 Banner superior atractivo con audio -->
 <div class="alert-banner">
   <div class="alert-container">
     <div class="alert-text">
-      <h3>Audio guía: Lección 1</h3>
-      <p>Escucha esta introducción antes de comenzar.</p>
+      <p><b>Audio guía - Lección 1:</b> Escucha esta introducción antes de comenzar</p>
     </div>
     <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
       <source src="l1.mp3" type="audio/mpeg">
@@ -418,7 +358,7 @@ label {
     </audio>
   </div>
 </div>
- <br>
+
   
   <div >
     <h2>Lección 1: El alfabeto - The alphabet </h2>
@@ -503,11 +443,13 @@ label {
 </section>
 
  <section id="page-2" class="card page" data-title="Lección 2: Los números">
+        <img src="3.png" class="banner-img" alt="Banner">
+
 <div class="alert-banner">
   <div class="alert-container">
     <div class="alert-text">
-      <h3>Audio guía: Lección 2</h3>
-      <p>Escucha esta introducción antes de comenzar.</p>
+            <p><b>Audio guía - Lección 2:</b> Escucha esta introducción antes de comenzar</p>
+
     </div>
     <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
       <source src="l2.mp3" type="audio/mpeg">
@@ -515,7 +457,6 @@ label {
     </audio>
   </div>
 </div>
- <br>
 
 
   <div>
@@ -618,11 +559,11 @@ label {
   <audio controls preload="metadata">
     <source src="7.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
-  </audio> <br>
+  </audio>
 
-  </div>
+  </div> <br>
 
-  <div> <br> <br>
+  <div> 
     <p><strong>Ordinal Numbers (Órdinal námbers):</strong> los números ordinales se usan para indicar orden o posición: fechas, pisos, lugares, capítulos, etc.</p>
   </div>
 
@@ -708,11 +649,14 @@ label {
 </section>
 
 <section id="page-3" class="card page" data-title="Lección 3: Días y sus partes">
+              
+      <img src="3.jpg" class="banner-img" alt="Banner">
+
   <div class="alert-banner">
   <div class="alert-container">
     <div class="alert-text">
-      <h3>Audio guía: Lección 3</h3>
-      <p>Escucha esta introducción antes de comenzar.</p>
+            <p><b>Audio guía - Lección 3:</b> Escucha esta introducción antes de comenzar</p>
+
     </div>
     <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
       <source src="l3.mp3" type="audio/mpeg">
@@ -720,7 +664,6 @@ label {
     </audio>
   </div>
 </div>
- <br>
 
 
   <div>
@@ -767,7 +710,7 @@ label {
       <source src="12.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
     </audio>
-  </div>
+  </div> <br>
 
   <div>
     <p>Las <strong>partes del día</strong> <i>(Parts of the Day)</i> sirven para indicar cuándo ocurre una acción.</p>
@@ -826,7 +769,7 @@ label {
       <source src="14.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
     </audio>
-  </div>
+  </div> <br>
 
   <div>
     <p><b>Otras formas de referirse a los días:</b></p>
@@ -881,11 +824,13 @@ label {
 </section>
 
  <section id="page-4" class="card page" data-title="Lección 4: Meses, estaciones y años">
+        <img src="5.png" class="banner-img" alt="Banner">
+
 <div class="alert-banner">
   <div class="alert-container">
     <div class="alert-text">
-      <h3>Audio guía: Lección 4</h3>
-      <p>Escucha esta introducción antes de comenzar.</p>
+            <p><b>Audio guía - Lección 4:</b> Escucha esta introducción antes de comenzar</p>
+
     </div>
     <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
       <source src="l4.mp3" type="audio/mpeg">
@@ -893,7 +838,7 @@ label {
     </audio>
   </div>
 </div>
- <br>
+
 
   <div>
     <h2>Lección 4: Meses, estaciones y años</h2>
@@ -1037,11 +982,13 @@ label {
 </section>
 
 <section id="page-5" class="card page" data-title="Lección 5: fechas, formatos y cumpleaños">
+        <img src="4.jpg" class="banner-img" alt="Banner">
+
 <div class="alert-banner">
   <div class="alert-container">
     <div class="alert-text">
-      <h3>Audio guía: Lección 5</h3>
-      <p>Escucha esta introducción antes de comenzar.</p>
+            <p><b>Audio guía - Lección 5:</b> Escucha esta introducción antes de comenzar</p>
+
     </div>
     <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
       <source src="l5.mp3" type="audio/mpeg">
@@ -1049,7 +996,7 @@ label {
     </audio>
   </div>
 </div>
- <br>
+
 
   <div>
     <h2>Lección 5: Fechas - Dates</h2>
@@ -1099,9 +1046,7 @@ label {
         Tu navegador no soporta audio.
       </audio>
     </div>
-
-
-  </div>
+  </div> <br>
 
   <div class="subsection">
     <p>Las <strong>décadas</strong> <i>(Decades)</i> se expresan con el número del año + s.</p>
@@ -1189,11 +1134,13 @@ label {
 </section>
 
 <section id="page-6" class="card page" data-title="Lección 6: horas">
+        <img src="4.png" class="banner-img" alt="Banner">
+
   <div class="alert-banner">
   <div class="alert-container">
     <div class="alert-text">
-      <h3>Audio guía: Lección 6</h3>
-      <p>Escucha esta introducción antes de comenzar.</p>
+            <p><b>Audio guía - Lección 6:</b> Escucha esta introducción antes de comenzar</p>
+
     </div>
     <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
       <source src="l6.mp3" type="audio/mpeg">
@@ -1238,7 +1185,7 @@ label {
         Tu navegador no soporta audio.
       </audio>
     </div>
-  </div>
+  </div> <br>
 
   <p>El <b>formato digital</b> es la forma de mostrar la hora usando números, como en un reloj electrónico, 
   celular o computadora. En este formato no se usa la partícula <i>It’s</i> y la hora se divide en dos partes:</p>  
@@ -1257,7 +1204,7 @@ label {
         Tu navegador no soporta audio.
       </audio>
     </div>
-  </div>
+  </div> <br>
 
   <p>En el <b>formato digital</b> también se puede usar AM/PM. 
   La diferencia con los anteriores ejemplos es agregar las partes del día: </p>
@@ -1282,7 +1229,7 @@ label {
         Tu navegador no soporta audio.
       </audio>
     </div>
-  </div>
+  </div> <br>
 
   <p>El <b>formato militar</b> de la hora es una forma de escribir la hora usando el sistema de 24 horas, 
     sin AM ni PM, tal como se usa en el ejército, la aviación, hospitales, transporte, etc.</p>
@@ -1307,11 +1254,13 @@ label {
 </section>
 
 <section  id="page-7" class="card page" data-title="Lección 7: presentarse">
+        <img src="2.jpg" class="banner-img" alt="Banner">
+
   <div class="alert-banner">
   <div class="alert-container">
     <div class="alert-text">
-      <h3>Audio guía: Lección 7</h3>
-      <p>Escucha esta introducción antes de comenzar.</p>
+            <p><b>Audio guía - Lección 7:</b> Escucha esta introducción antes de comenzar</p>
+
     </div>
     <audio controls preload="metadata" class="alert-audio" aria-label="Audio guía del alfabeto">
       <source src="l7.mp3" type="audio/mpeg">
@@ -1319,7 +1268,7 @@ label {
     </audio>
   </div>
 </div>
- <br>
+
 
 <div>
 <h2>Lección 7. Presentarse y preguntar la hora/fecha</h2>
@@ -1421,7 +1370,7 @@ label {
       Tu navegador no soporta audio.
     </audio>
   </div>
-</div>
+</div> <br>
 
 <p>Para <b>pedir y decir la hora (Asking and telling the time)</b> en inglés podemos usar las siguientes frases.</p>
 <div class="styled-table">
@@ -1484,7 +1433,7 @@ label {
       Tu navegador no soporta audio.
     </audio>
   </div>
-</div>
+</div> <br>
 
 <div>
   <p>Para <b>pedir y decir la fecha (Asking and telling the date)</b> se pueden usar las siguientes frases.</p>
